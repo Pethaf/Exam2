@@ -1,0 +1,433 @@
+﻿
+.aside-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.article-view-main {
+    min-height: 100vh;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.aside-content .time, 
+.article-view-author-name,
+.fa-solid fa-circle-info {
+    width: fit-content;
+    font-size:var(--small-font-size);
+}
+.article-view-main img {
+    max-width: 100%;
+    margin-bottom: var(--distance-normal);
+}
+
+h1.article-view-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-family: Arial;
+    color: var(--white);
+    z-index:999;
+    font-size: calc(0.07*(100vw - 360px) + 18px);
+    max-width:200px;
+}
+
+.author-panel {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: var(--white);
+    align-items: center;
+    padding: var(--distance-normal);
+}
+
+.author-panel * {
+    font-size: var(--small-font-size);
+}
+
+.aside-container .commercial-link {
+    width: 100%;
+}
+.fa-circle-info{
+    margin-right: var(--distance-normal);
+}
+.author-portrait {
+    background-color: hotpink;
+}
+.author-portrait,
+.fa-brands,
+.contact-author-link {
+    display:none;
+}
+
+.article-view-image {
+    filter: brightness(50%);
+    margin-bottom: var(--distance-normal);
+    width: 100%;
+}
+
+.article-view-author-panel {
+    font-size: var(--small-font-size);
+    display: flex;
+    width: 100%;
+    background: var(--white);
+    padding: var(--distance-normal);
+    margin-bottom: var(--distance-normal);
+}
+
+.aside-container {
+    padding-top: var(--distance-normal);
+}
+
+.article-view-author-name {
+    margin-right: var(--distance-small);
+}
+
+time {
+    margin-right: var(--distance-normal);
+}
+.article-view-author-panel .fa {
+    margin-right: var(--distance-normal);
+}
+
+.article-view-author-panel time {
+    margin-left: var(--distance-normal);
+}
+
+.article-view-article-container {
+    margin-top: var(--distance-normal);
+    background: var(--white);
+    margin-bottom: var(--distance-large);
+    padding: 0 var(--distance-large);
+    padding-bottom: var(--distance-large);
+    width: 100%;
+}
+.commercial-link {
+    margin-top: var(--distance-normal);
+}
+.article-view-article-container > * {
+    margin-top: var(--distance-normal)
+}
+
+.article-intro {
+    font-weight: 800;
+    margin-top: var(--distance-large);
+}
+
+.article-detail-quote {
+    position: relative;
+    display: block;
+    background: var(--primary);
+    color: var(--white);
+}
+
+.article-view-comment-container h2 {
+    color: var(--black);
+}
+
+.article-detail-quote-background p {
+    font-size: var(--extra-large-font-size);
+    position: relative;
+    width: 100%;
+}
+
+.article-detail-quote {
+    padding: var(--distance-large);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-detail-quote p {
+        font-size: var(--extra-large-font-size);
+        color: var(--secondary);
+        position: absolute;
+        z-index: -1;
+    }
+.article-detail-quote .the-quote {
+    position: static;
+    width: 125px;
+    margin: 0 auto;
+    left: 60px;
+    z-index: 1;
+    font-size: var(--small-font-size);
+    color:var(--white);
+}
+
+.toggle-comment-form-visibility {
+    text-decoration: underline;
+    color: var(--primary);
+    margin-bottom: var(--distance-normal);
+}
+
+.toggle-comment-form-visibility:hover {
+    cursor: pointer;
+}
+
+form {
+    margin-top: var(--distance-large);
+    display: flex;
+    flex-direction: column;
+}
+
+#popup.hidden,
+.hidden {
+    display:none;
+}
+form * {
+    margin: var(--distance-small) 0;
+    width: 100%;
+}
+
+input[type="email"] {
+    padding: 0;
+    white-space:nowrap;
+    flex-grow: 0;
+}
+form textarea {
+    margin: 0;
+    padding: var(--distance-small);
+}
+
+.submit-comment-button {
+    padding: 0;
+    width: 200px;
+    padding: 0;
+    background: var(--primary);
+    height: 30px;
+    align-self:flex-end;
+    color: var(--white);
+    border-radius: var(--distance-large);
+    margin-left: 80px;
+}
+.comment-header {
+    border-bottom: 1px solid var(--dark-gray);
+    padding-bottom: 5px;
+    color: var(--dark-gray);
+    padding-top: 0;
+}
+
+.comment-content {
+    padding-top: 5px;
+}
+
+.article-detail-comment {
+    margin-bottom: var(--distance-small);
+    padding: var(--distance-small);
+}
+
+
+.highlight {
+    background: var(--light-gray);
+}
+
+.article-view-article-container.dark-mode  {
+    background: var(--dark-gray);
+}
+
+.article-view-article-container.dark-mode > * {
+    color: var(--white);
+
+}
+
+.dark-mode .comment-header{
+    color: var(--white);
+    border-bottom-color: var(--white);
+}
+
+.dark-mode .highlight {
+    background: var(--black);
+}
+
+.dark-mode .author-panel {
+    background: var(--dark-gray);
+    color: var(--white);
+}
+
+.aside-container a {
+    text-decoration: none;
+}
+.dark-mode a {
+    color: white;
+}
+@keyframes animImage {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.comment-controlls-wrapper {
+    border-top: 1px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+} 
+
+
+@media screen and (min-width:700px) {
+    .comment-controlls-wrapper {
+        flex-direction: row;
+        align-items:baseline;
+        justify-content:space-between;
+    }
+    .comment-controlls-wrapper > * {
+        display: inline-block;
+    }
+    .article-view-main{
+        display: flex;
+        justify-content: space-between;
+    }
+    .aside-container {
+        width: 220px;
+        order: 2;
+        display: flex;
+        padding: 0;
+        flex-grow: 0;
+    }
+    .author-panel {
+        display: flex;
+        flex-direction: column;
+    }
+    .article-view-article-container {
+        min-width: 420px;
+        margin-top: 0;
+        width: calc(100% - 230px );
+        max-width:770px;
+    }
+    .author-portrait,
+    .fa,
+    .fa-brands,
+    .contact-author-link {
+        display:block;
+    }
+    .fa-solid.fa-circle-info {
+        display: none;
+    }
+    .aside-container time{
+     order: 1;   
+     text-align: center;
+    }
+    .author-portrait {
+        order: 2;
+    }
+    .article-view-author-name {
+        order: 3;
+        margin-left: 0;
+    }
+    .aside-container .commercial-link {
+        order: 6;
+    }
+    .author-contact-methods {
+        order: 4;
+        margin-top: var(--distance-small);
+        width: 100%;
+    }
+
+    .contact-author-link .fa-envelope,
+    .contact-author-link .fa-twitter {
+        margin-top: var(--distance-small);
+        width: fit-content;
+        display: inline-block;
+        margin-right: var(--distance-small);
+        
+    }
+
+    .author-contact-methods a {
+        color: #000;
+    }
+    
+    .dark-mode .author-contact-methods a{
+        color: var(--white);
+    }
+    h1.article-view-heading {
+        font-size: var(--extra-large-font-size);
+    }
+}
+
+
+#popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: var(--white);
+
+}
+
+#popup img {
+    max-width: 100%;
+    flex-grow:0;
+}
+
+#popup .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+#popup .popup-head {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--distance-small);
+    width: 100%;
+}
+
+#popup .author-portrait 
+{
+    display: block;
+    margin: var(--distance-small);
+}
+
+#popup .fa-brands,
+#popup .fa-envelope {
+    display: inline-block;
+}
+#popup button {
+    margin-top: var(--distance-small);
+}
+
+#popup button {
+    width: 100%;
+    background-color: var(--white);
+    padding: var(--distance-small) var(--distance-normal);
+ }
+
+ .the-quote {
+    padding: 0;
+    text-align: center;
+ }
+
+.the-quote::before {
+    padding-left: var(--distance-normal);
+    content: open-quote;
+    position: absolute; 
+    top: 35%;
+    left: var(--distance-large);
+    font-size: var(--extra-large-font-size);
+    z-index: -1;
+    color: #7fa07d;
+}
+
+.the-quote::after {
+    padding-right: var(--distance-normal);
+    position: absolute;
+    content: close-quote;
+    font-size: var(--extra-large-font-size);
+    z-index: -1;
+    top:35%;
+    right: var(--distance-large);
+    color: #7fa07d;
+}
+ .positioning-container {
+    position: relative;
+    text-align: center;
+    margin-top: var(--distance-normal);
+ }

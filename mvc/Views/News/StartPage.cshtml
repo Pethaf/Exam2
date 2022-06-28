@@ -1,0 +1,87 @@
+﻿@using mvc.Models; 
+@model StartPageViewModel;
+
+
+<!Doctype html>
+<html>
+    <head>
+        <meta name="viewport" content = "width=device-width" />
+        <title>Blåatoppens dagblad</title>
+    </head>
+<body>
+<main>
+@foreach(var article in Model.PinnedArticles)
+{
+    <a class="pinned-article-link" href=@Url.Action($"{@article.Id.ToString()}-{@article.Title.Replace(" ","-")}", "News")>
+    <section class="pinned-article">
+        
+        <h2 class="pinned-article-heading">@article.Title</h2>
+        <img src=@($"images/{article.ImageName}") class="pinned-article-image" alt="">
+        <p class="pinned-article-time">
+            @if (article.Created.Value.Date == DateTime.Today)
+                            {
+                                <time datetime =@article.Created.Value.ToString(@"H:mm")>  @article.Created.Value.ToString(@"H:mm")</time>
+
+                            }
+                            else
+                            {
+                                <time datetime = @article.Created.Value.ToString("yyyy-MM-dd HH:mm")>@article.Created.Value.ToString("yyyy-MM-dd HH:mm")</time>
+                            } 
+        </p>
+        <p class="pinned-article-author">—@article.AuthorFirstName.ToUpper() @article.AuthorLastName.ToUpper()</p>
+    </section>
+    </a>
+}
+<div class="latestnews-container">
+<a href="https://www.buyawesomestuff.com" target="_blank" aria-label="Go to this site and buy awesome stuff">
+<picture class="commercial">
+  <source media="(max-width:699px)" srcset="/ads/reklam-@ViewBag.rnd-landscape-470w.png">
+  <source media="(max-width:940px)" srcset="/ads/reklam-@ViewBag.rnd-landscape-940w.png">
+  <source media="(max-width:1399px)" srcset="/ads/reklam-@ViewBag.rnd-landscape-1880w.png" >
+  <source media="(min-width:1400px)" srcset="/ads/reklam-@ViewBag.rnd-portrait-320w.png"> 
+  <img src="/ads/reklam-@ViewBag.rnd-landscape-1880w.png" alt="">
+</picture> 
+</a>
+<section id="latest-news-article-container">
+            <h2 id="latest-news-headline">De senaste nyheterna</h2>
+            @foreach (var article in Model.LatestArticles)
+            {
+                    <section class="latest-news-article">
+                        <div class="news-article-wrapper">
+                            <h3 class="latest-news-article-heading">@article.Title</h3>
+                            <p class="latest-news-article-summary">@article.Intro</p>
+                        </div>
+                        <div class="latest-news-article-time-container">
+                            @article.Created.Value.ToString(@"H:mm")
+                        </div> 
+           <button type="button" class="latest-news-article-read-more-button" onclick= "window.location='@Url.Action($"{@article.Id.ToString()}-{@article.Title.Replace(" ","-")}", "News")'">
+            <p>Läs mer</p><i class="fa-solid fa-arrow-right"></i>
+           </button>
+            </section>
+        }
+    </section>
+</div>
+
+@*<img src="/ads/reklam-1-landscape-470w.png" alt="" 
+      srcset ="
+              /ads/reklam-1-landscape-470w.png 470w,
+              /ads/reklam-1-landscape-940w.png 940w,
+              /ads/reklam-1-portrait-320w.png 320w"
+      sizes = "(max-width: 699px) 470w,
+               (min-width: 1024px) 940w,
+               (min-width: 1400px) 320w"
+ />*@
+ @*<img srcset= "ads/reklam-1-landscape-470w.png 470w,
+              ads/reklam-1-landscape-940w.png 940w,
+              ads/reklam-1-landscape-1880w.png 1880w,
+              ads/reklam-1-portratit-320w.png 320w"
+              sizes = "(max-width:700px) 470px,
+                       (max-width: 1024px) 940px, 
+                       (max-width: 1440px) 1880px 320w"
+              src="~/ads~/ads/reklam-1-landscape-47w.png"
+              alt="" class="commercial/>
+<img src=@($"/ads/reklam-{ViewBag.rnd}-landscape-470w.png") class="commercial" alt=""/>
+</div>*@
+</main>
+</body>
+</html>

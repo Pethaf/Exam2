@@ -1,0 +1,172 @@
+﻿.text-danger {
+    font-size: var(--small-font-size);
+    color: var(--danger);
+}
+
+.latestnews-container {
+    margin: 0 var(--distance-normal);
+    max-width: 100%;
+    margin-bottom: var(--distance-normal);
+
+}
+
+#latest-news-article-container.dark-mode {
+    color:var(--white);
+    background:var(--dark-gray);
+}
+
+#latest-news-article-container.dark-mode * {
+    color:var(--white);
+    background:var(--dark-gray);
+}
+#latest-news-headline {
+    padding: 0;
+    margin-bottom: var(--distance-normal);
+}
+.commercial {
+    width: 100%;
+    display: block;
+    margin-bottom: var(--distance-normal);
+    height: 100px;
+}
+
+#latest-news-article-container {
+    background: var(--white);
+    padding: 0 var(--distance-normal);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--distance-small);
+    max-width:465px;
+}
+
+#latest-news-headline {
+    padding: var(--distance-normal) 0;
+    color: var(--black);
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.latest-news-article-heading {
+    font-family: var(--body-text-font);
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+.latest-news-article {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    border-bottom: 1px solid var(--primary);
+    padding: var(--distance-small) 0;
+}
+
+.latest-news-article * {
+    width: 100%;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.latest-news-article-time-container {
+    order: -1;
+    padding-bottom: var(--distance-small);
+}
+
+
+.latest-news-article-summary {
+    padding: var(--distance-small) 0;
+    color: var(--primary);
+    font-size: var(--small-font-size);
+}
+button.latest-news-article-read-more-button p {
+    margin-right: var(--distance-small);
+}
+button.latest-news-article-read-more-button {
+    margin-top: var(--distance-normal);
+    background: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--black);
+    max-width:280px;
+    margin: 0 auto;
+}
+
+button.latest-news-article-read-more-button:hover,
+button.latest-news-article-read-more-button:focus {
+    color: var(--secondary);
+}
+
+button.latest-news-article-read-more-button * {
+    display: inline; 
+}
+
+#latest-news-article-container.dark-mode .latest-news-article {
+    border-bottom: 1px solid var(--secondary);
+}
+
+#latest-news-article-container.dark-mode .latest-news-article:last-of-type {
+    border-bottom: none;
+}
+
+#latest-news-article-container.dark-mode button {
+    background: var(--primary);
+}
+
+#latest-news-article-container.dark-mode button:hover,
+#latest-news-article-container.dark-mode button:focus {
+    background: var(--secondary);
+    color:var(--white);
+}
+
+#latest-news-article-container.dark-mode button:hover >*,
+#latest-news-article-container.dark-mode button:focus >*
+{
+    background: var(--secondary);
+}
+@media screen and (min-width: 700px) {
+    #latest-news-article-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 var(--distance-normal);
+    }
+    
+    .latest-news-article {
+        flex-direction: row;
+        width: 100%;
+    }
+    .latest-news-article-time-container {
+        margin-left: var(--distance-normal);
+        width: 6em;
+        padding-right: var(--distance-normal);
+    }
+    .news-article-wrapper {
+      padding-right:var(--distance-normal);
+    }
+    .latest-news-article-heading {
+        width: 200px;
+    }
+
+    .latest-news-article-read-more-button {
+        width: 140px;
+        font-size: var(--small-font-size);
+    }
+}
+
+@media screen and (min-width:1400px){
+    .latestnews-container {
+        display:flex;
+        justify-content: space-around;
+    } 
+    #latest-news-article-container {
+       order: -1;
+       margin-right: var(--distance-small);
+       width: 660px;
+       height: 510px;
+    }
+    .commercial {
+        width: 320px;
+        height: 528px;
+    }
+    #latest-news-article-container.dark-mode .latest-news-article:last-of-type {
+        border-bottom: 1px solid var(--secondary);
+    }
+    
+}

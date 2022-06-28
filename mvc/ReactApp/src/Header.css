@@ -1,0 +1,10 @@
+header {
+    color: white;
+    background: #548052;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    padding-left: 125px;
+    width: 1000px;
+}

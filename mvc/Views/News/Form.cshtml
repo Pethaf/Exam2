@@ -1,0 +1,14 @@
+﻿@{
+    Layout = null;
+}
+
+@model mvc.Models.ArticleViewModel;
+
+<form asp-action="comment">
+    @Model.theArticle.Id;
+    <label asp-for="theComment.CommentedBy">E-post</label>
+    <input asp-for="theComment.CommentedBy"/>
+    <label asp-for="theComment.Value">Kommentar</label>
+    <input asp-for="theComment.Value" />
+    <button type="submit">Skicka kommentar</button>
+</form>

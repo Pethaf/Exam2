@@ -1,0 +1,44 @@
+.edit-article-heading {
+    display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid #60935d;
+   padding: 0 10px;
+   align-items: flex-end;
+}
+
+.edit-article-heading h2 {
+    margin:0;
+}
+.create-block-button {
+    border: 1px solid black;
+    display: block;
+    margin: 0 auto;
+    background: #548052;
+    color: #fff;
+}
+
+
+.fa-xmark {
+    background: #805252;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.save-article-btn {
+    background: #548052;
+    color: #fff;
+    margin-right: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+.edit-article-heading {
+    display: flex;
+
+}
+
+.btn-container {
+    display: flex;
+    padding-bottom: 5px;
+}

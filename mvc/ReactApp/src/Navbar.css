@@ -1,0 +1,22 @@
+nav {
+    padding-top: 200px;
+    background: #548052;
+    width: 260px;
+    flex-grow: 0;
+    padding-left: 20px;
+}
+a.active {
+    background: white;
+}
+
+nav a {
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    background: #BBDFC5;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    padding-left: 30px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+}

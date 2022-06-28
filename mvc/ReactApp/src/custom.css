@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100vw;
+}
+
+.app-container {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+

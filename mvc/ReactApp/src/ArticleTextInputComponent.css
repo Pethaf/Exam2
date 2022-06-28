@@ -1,0 +1,48 @@
+.InputWrapper {
+    width: 400px;
+}
+
+.InputWrapper .top-border {
+    height: 40px;
+}
+
+.top-border > * {
+    max-height: 100%;
+}
+.InputWrapper textarea {
+    width: 100%;
+}
+
+.name-container {
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    background: #548052;
+    color: white;
+    text-transform: capitalize;
+    flex-grow: 1;
+}
+
+.fa-arrow-up, 
+.fa-arrow-down,
+.fa-trash {
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.fa-trash {
+    margin-right: 0;
+    background: #805252;
+}
+
+.input-btn-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-grow:2;
+    background: #fff;
+}
+
+.InputWrapper textarea {
+    border: 10px solid #e5e7e5;
+}

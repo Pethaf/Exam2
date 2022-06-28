@@ -1,0 +1,108 @@
+﻿@using mvc.Models; 
+@model ArticleViewModel;
+<!Doctype html>
+<html>
+    <head>
+        <meta name="viewport" content = "width=device-width" />
+        <title>News Article</title>
+    </head>
+    <body>
+        <main class="article-view-main">
+        <div class="positioning-container">
+            <h1 class="article-view-heading">
+            @Model.theArticle.Title;
+        </h1>
+        <img class="article-view-image" src="/images/@Model.theArticle.ImageName" alt=""/>
+        </div>
+        <aside class="aside-container">
+            <div class="author-panel">
+            <p class="article-view-author-name">@Model.theArticle.Author.FirstName @Model.theArticle.Author.LastName</p>
+            <img src="/images/@Model.theArticle.Author.ImageName" alt="" class="author-portrait"/>
+            <div class="author-contact-methods">
+            <a href="#" class="contact-author-link"><i class="fa fa-envelope" aria-hidden="true"></i>Epost</a>
+            <a href="#" class="contact-author-link"><i class="fa-brands fa-twitter" aria-hidden="true"></i>Twitter</a>
+            </div>
+            <i class="fa-solid fa-circle-info"></i>
+            <time datetime=@Model.theArticle.Created>@Model.theArticle.Created </time>
+            </div>
+        <a href="https://www.buyawesomestuff.com" target="_blank" class="commercial-link">
+        <picture class="article-view-page-commercial">
+            <source media="(min-width:700px)" srcset="/ads/reklam-@ViewBag.rnd-portrait-320w.png">
+            <source media="(min-width:510px)" srcset="/ads/reklam-@ViewBag.rnd-landscape-940w.png">
+        <img src="/ads/reklam-@ViewBag.rnd-landscape-470w.png" alt="">
+        </picture> 
+        </a>
+        </aside>
+        <div class="article-view-article-container">
+            <section class="article-intro">
+                @Model.theArticle.Intro
+            </section>
+            @foreach(var block in @Model.theArticle.Blocks)
+            {
+                switch (@block.Type)
+                {
+                    case "paragraph":
+                        <p class="article-detail-paragraph animate"  data-animate="animImage 2s">
+                            @block.Value;
+                        </p>
+                        break;
+                    case "image":
+                        <img class="article-detail-image animate" src="/images/@block.Value" alt=""  data-animate="animImage 2s">
+
+                        </img>
+                        break;
+                    case "quote":
+                        <quote class="article-detail-quote animate"  data-animate="animImage 2s">
+                               @*<p class="quotation-mark-left">“ <p>*@
+                                <p class="the-quote">@block.Value</p>
+                               @*<p class="quotation-mark-right">”</p>*@
+                            
+                        </quote>
+                        break;
+                }
+            }
+            <section class="article-view-comment-container">
+                <form asp-action="Newspage" method="post" class="comment-form hidden">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.Label("theComment.CommentedBy","Din e-postadress")
+                @Html.EditorFor(m => m.theComment.CommentedBy)
+                @Html.ValidationMessageFor(model => model.theComment.CommentedBy, "", new { @class = "text-danger" })
+                @Html.Label("theComment.Value","Din kommentar")
+                @Html.TextAreaFor(m => m.theComment.Value)
+                @Html.ValidationMessageFor(model => model.theComment.Value, "", new {@class ="text-danger"})
+                @Html.Hidden("theComment.ArticleId",(string) ViewBag.articleID)
+                <button type="submit" class="submit-comment-button">Lägg till kommentar</button>
+                </form>
+                <div class="comment-controlls-wrapper">
+                <h2>@Model.theArticle.Comments.Count() kommentarer</h2>
+                <p class="toggle-comment-form-visibility">Skriv en kommentar</p>
+                </div>
+               @foreach(var comment in Model.theArticle.Comments)
+            {
+                <section class="article-detail-comment">
+                    <div class="comment-header">
+                        <p>@comment.CommentedBy</p>
+                        <time datetime=@comment.Created.ToString("yyyy-MM-dd hh:MM:ss") class="comment-date-time">@comment.Created.ToString("yyyy-MM-dd hh:mm:ss")</time>
+                    </div>
+                    <div class="comment-content">
+                        @comment.Value
+                    </div>
+                </section>
+            }
+            </section>
+            
+        </div> 
+        </main>
+        <div id="popup" class="hidden">
+            <div class="container">
+                <div class="popup-head"><datetime time=@Model.theArticle.Created>@Model.theArticle.Created</datetime>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+                 <img src="/images/@Model.theArticle.Author.ImageName" alt="" class="author-portrait"/>
+                <p class="article-view-author-name">@Model.theArticle.Author.FirstName @Model.theArticle.Author.LastName</p>
+                <button type="button"><i class="fa fa-envelope"></i> E-post</button>
+                <button type="button"><i class="fa-brands fa-twitter"></i> Twitter</button>
+            </div>
+        </div>
+    </body>
+</html>
